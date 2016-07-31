@@ -1,7 +1,7 @@
 import Levers from '../dist/levers'
 
 import { exists } from 'fs-jetpack'
-import { resolve, isAbsolute } from 'path'
+import { resolve, isAbsolute, join } from 'path'
 import { ok, strictEqual, deepEqual } from 'assert'
 import { isPlainObject, isEmpty } from 'lodash'
 
@@ -13,7 +13,7 @@ describe('levers', () => {
   afterEach('clear the data file', () => settings.clear())
 
   it('ensures the file exists and removes user added .json extension', () => {
-    strictEqual(exists(`${filePath}\\${fileName}`), 'file')
+    strictEqual(exists(join(filePath, fileName)), 'file')
   })
 
   describe('#path', () => {
@@ -22,7 +22,7 @@ describe('levers', () => {
     })
 
     it('should be equal to the initialization path + file name', () => {
-      strictEqual(settings.path, `${filePath}\\${fileName}`)
+      strictEqual(settings.path, join(filePath, fileName))
     })
   })
 
