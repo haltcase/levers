@@ -1,6 +1,6 @@
 {
   "name": "levers",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A simple settings store for Electron",
   "main": "dist/levers.js",
   "jsnext:main": "dist/levers.mjs",
