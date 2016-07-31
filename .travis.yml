@@ -22,9 +22,9 @@ before_install:
       sleep 3;
     fi
 
-notifications:
-  email: false
-
 install:
   - npm prune
   - npm install
+
+notifications:
+  email: false
