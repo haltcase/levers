@@ -15,9 +15,7 @@ Electron doesn't really have a built-in way to manage data storage, aside from t
 
 ## Installation
 
-While not yet on NPM ( it will be soon! ) you can easily install it from the GitHub repo:
-
-`npm i citycide/levers`
+`npm i levers`
 
 ## Usage
 
