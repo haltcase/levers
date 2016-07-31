@@ -39,6 +39,10 @@ This module is heavily based on `conf` with a few core differences.
 
    `productName -> name -> 'Electron'`
 
+   This is then used to point to a subdirectory with that name inside Electron's `getPath('appData')`. Astute readers may ask, "Why not just use Electron's `getPath('userData')` path instead of building that same path manually?" The problem with `userData` is that in some cases, especially development, it defaults to the 'Electron' directory rather than the app's actual name. This has to do with using `electron-prebuilt`.
+
+[approot]: inxilpro/node-app-root-path
+
 ## Contributing
 
 I am open to input and discussion about the project. Feel free to open an issue or submit a pull request. For large changes, please open an issue to discuss the revisions first.
