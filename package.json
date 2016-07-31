@@ -11,6 +11,7 @@
     "pretest": "npm run build",
     "test": "electron-mocha",
     "docs": "jsdoc -c .jsdoc.json",
+    "pages": "git subtree split --prefix docs -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages",
     "prepublish": "npm test"
   },
   "repository": {
