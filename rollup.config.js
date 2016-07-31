@@ -7,6 +7,9 @@ export default {
   entry: 'lib/index.js',
   plugins: [
     babel({
+      babelrc: false,
+      presets: ['es2015-rollup', 'stage-0'],
+      plugins: ['transform-runtime'],
       externalHelpers: false,
       runtimeHelpers: true
     })
