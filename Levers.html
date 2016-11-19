@@ -22,7 +22,7 @@
 <label for="nav-trigger" class="overlay"></label>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Levers.html">Levers</a><ul class='methods'><li data-type='method'><a href="Levers.html#clear">clear</a></li><li data-type='method'><a href="Levers.html#del">del</a></li><li data-type='method'><a href="Levers.html#get">get</a></li><li data-type='method'><a href="Levers.html#has">has</a></li><li data-type='method'><a href="Levers.html#set">set</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Levers.html">Levers</a><ul class='methods'><li data-type='method'><a href="Levers.html#.create">create</a></li><li data-type='method'><a href="Levers.html#.exists">exists</a></li><li data-type='method'><a href="Levers.html#clear">clear</a></li><li data-type='method'><a href="Levers.html#del">del</a></li><li data-type='method'><a href="Levers.html#get">get</a></li><li data-type='method'><a href="Levers.html#has">has</a></li><li data-type='method'><a href="Levers.html#set">set</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -125,7 +125,7 @@ file will be created if they do not exist already.</p>
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>import Levers from 'levers' // creates a file named `.settings.json` in the default directory const settings = new Levers() // creates `app.json` in the default directory const appSettings = new Levers('app') // creates `config.json` in custom directory // uses opts.defaults to set initial values const path = require('path') const windowSettings = new Levers('config', {   dir: path.resolve(__dirname, 'settings')   defaults: { dev: true, theme: 'light' } })</code></pre>
+    <pre class="prettyprint"><code>import Levers from 'levers'// creates a file named `.settings.json` in the default directoryconst settings = new Levers()// creates `app.json` in the default directoryconst appSettings = new Levers('app')// creates `config.json` in custom directory// uses opts.defaults to set initial valuesconst path = require('path')const windowSettings = new Levers('config', {  dir: path.resolve(__dirname, 'settings')  defaults: { dev: true, theme: 'light' }})</code></pre>
 
 
 
@@ -205,7 +205,7 @@ file will be created if they do not exist already.</p>
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
             
@@ -298,7 +298,7 @@ file will be created if they do not exist already.</p>
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
             
@@ -362,6 +362,86 @@ file will be created if they do not exist already.</p>
 
     
         <h3 class="subsection-title">Members</h3>
+
+        
+            
+<h4 class="name" id="data"><span class="type-signature"></span>data<span class="type-signature"> :Object</span></h4>
+
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line227">line 227</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>SETTER<br>
+Replace the entire store with a new object</p>
+<p>Also used internally to write changes</p>
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>levers.set('youWillNeverSeeThis', true)levers.data = { dev: true, ui: { theme: 'dark' } }levers.data// -> { dev: true, ui: { theme: 'dark' } }</code></pre>
+
+
 
         
             
@@ -444,86 +524,6 @@ Retrieve the entire dataset</p>
 
         
             
-<h4 class="name" id="data"><span class="type-signature"></span>data<span class="type-signature"> :Object</span></h4>
-
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line234">line 234</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-<div class="description">
-    <p>SETTER<br>
-Replace the entire store with a new object</p>
-<p>Also used internally to write changes</p>
-</div>
-
-
-
-    <h5>Type:</h5>
-    <ul>
-        <li>
-            
-<span class="param-type">Object</span>
-
-
-        </li>
-    </ul>
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>levers.set('youWillNeverSeeThis', true)levers.data = { dev: true, ui: { theme: 'dark' } }levers.data// -> { dev: true, ui: { theme: 'dark' } }</code></pre>
-
-
-
-        
-            
 <h4 class="name" id="path"><span class="type-signature"></span>path<span class="type-signature"> :string</span></h4>
 
 
@@ -535,7 +535,7 @@ Replace the entire store with a new object</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line251">line 251</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line244">line 244</a>
     </li></ul></dd>
     
 
@@ -683,6 +683,431 @@ Replace the entire store with a new object</p>
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".create"><span class="type-signature">(static) </span>create<span class="signature">(fileName<span class="signature-attributes">opt</span>, opts<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="Levers.html">Levers</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line291">line 291</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="Levers.html">Levers</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Factory method for creating <code>Levers</code> instances. Provides
+a cleaner method of creating a Levers instance when used
+in callback or factory situations without having to wrap
+<code>new Levers()</code> in an anonymous function.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import Levers from 'levers'// the following are exactly equivalentnew Levers('app')Levers.create('app')</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>'.settings'</code>
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>opts</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>{}</code>
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Levers.html">Levers</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".exists"><span class="type-signature">(static) </span>exists<span class="signature">(name, dir<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line268">line 268</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description">
+    <p>Check the existence of a Levers file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>import Levers from 'levers'if (!Levers.exists('app')) {  // the file doesn't exist}const settings = new Levers('app')</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The name of the file to search for</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dir</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The directory in which to search. Uses the same resolution
+  as passing <code>options.dir</code> to a <code>Levers</code> constructor.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
 
         
             
@@ -1453,7 +1878,7 @@ or an object, in which case <code>value</code> is ignored</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Jul 31 2016 14:37:26 GMT-0500 (Central Daylight Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Nov 18 2016 23:28:36 GMT-0600 (Central Standard Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
