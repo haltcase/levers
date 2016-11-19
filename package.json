@@ -35,8 +35,9 @@
     "url": "https://github.com/citycide/levers/issues"
   },
   "files": [
-    "lib",
-    "dist"
+    "src",
+    "dist",
+    "README.md"
   ],
   "homepage": "https://github.com/citycide/levers#readme",
   "dependencies": {
