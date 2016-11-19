@@ -47,10 +47,10 @@
     "is-plain-obj": "^1.1.0"
   },
   "devDependencies": {
-    "docdash": "^0.4.0",
     "babel-register": "^6.18.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
     "babel-plugin-transform-es2015-parameters": "^6.18.0",
+    "docdash": "citycide/docdash",
     "electron": "^1.4.7",
     "electron-mocha": "^3.2.0",
     "eslint": "^3.10.2",
