@@ -44,7 +44,7 @@
     "dot-prop": "^3.0.0",
     "env-paths": "^0.3.0",
     "fs-jetpack": "^0.9.2",
-    "lodash": "^4.13.1"
+    "is-plain-obj": "^1.1.0"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.0",

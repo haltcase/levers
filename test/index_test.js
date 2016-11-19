@@ -1,9 +1,8 @@
 import Levers from '../dist/levers'
 
-import { exists } from 'fs-jetpack'
+import isPlainObject from 'is-plain-obj'
 import { resolve, isAbsolute, join } from 'path'
 import { ok, strictEqual, deepEqual } from 'assert'
-import { isPlainObject, isEmpty } from 'lodash'
 
 const fileName = 'test.json'
 const filePath = resolve(__dirname, '../fixtures')
@@ -62,7 +61,8 @@ describe('levers', () => {
       settings.data = { one: 'one', two: 'two', three: 'three' }
 
       settings.clear()
-      ok(isPlainObject(settings.data) && isEmpty(settings.data))
+      ok(isPlainObject(settings.data))
+      deepEqual(settings.data, {})
     })
   })
 
