@@ -8,21 +8,20 @@ export default {
   plugins: [
     babel({
       babelrc: false,
-      presets: ['es2015-rollup', 'stage-0'],
-      plugins: ['transform-runtime'],
-      externalHelpers: false,
-      runtimeHelpers: true
+      presets: [],
+      plugins: [
+        'transform-es2015-parameters'
+      ],
+      comments: false
     })
   ],
   external,
   targets: [{
     dest: pkg['main'],
-    format: 'umd',
-    moduleName: 'levers',
-    sourceMap: true
+    format: 'cjs',
+    moduleName: 'levers'
   }, {
     dest: pkg['jsnext:main'],
-    format: 'es',
-    sourceMap: true
+    format: 'es'
   }]
 }
