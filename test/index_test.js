@@ -70,7 +70,7 @@ describe('levers', () => {
       ok(!Levers.exists('non-existent', FILE_PATH))
     })
 
-    it('returns true if the given file does not exist', () => {
+    it('returns true if the given file exists', () => {
       ok(Levers.exists(FILE_NAME, FILE_PATH))
     })
   })
