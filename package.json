@@ -60,7 +60,7 @@
     "jsdoc": "^3.4.0",
     "rollup": "^0.38.3",
     "rollup-plugin-babel": "^2.6.1",
-    "rollup-watch": "^2.5.0"
+    "rollup-watch": "^3.0.0"
   },
   "babel": {
     "presets": [],
