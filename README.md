@@ -1,54 +1,27 @@
-### <p align="center"><b>levers</b></p>
+# levers &middot; [![Version](https://img.shields.io/npm/v/levers.svg?style=flat-square&maxAge=3600)](https://www.npmjs.com/package/levers) [![License](https://img.shields.io/npm/l/levers.svg?style=flat-square&maxAge=3600)](https://www.npmjs.com/package/levers) [![Travis CI](https://img.shields.io/travis/citycide/levers.svg?style=flat-square&maxAge=3600)](https://travis-ci.org/citycide/levers) [![JavaScript Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square&maxAge=3600)](https://standardjs.com)
 
-> ***levers*** is a simple data storage module aimed at Electron apps.
+> Settings storage with no class.
 
-*note: levers is currently in active development and while it's currently in a high-functioning state, there may be bugs, untested features, and a lack of documentation.*
+*note: levers is currently in active development so there ~~may~~ will be bugs,
+untested features, and a complete lack of documentation or reason for existence.*
 
-## Why?
+## features
 
-Electron doesn't really have a built-in way to manage data storage, aside from the typical browser's `localStorage`. But this is only available in the renderer process. ***levers*** gives you a way to read and write JSON files from both the main and renderer processes, and you can even access nested properties using dot notation, thanks to [dot-prop][dotprop].
+> coming soon
 
-***levers*** is similar to other implementations, especially [conf][conf] from the author of `dot-prop`. In fact a lot of credit for the code herein belongs to @sindresorhus. [See here for more on how these projects relate.](#relation-to-other-projects)
-
-[dotprop]: https://github.com/sindresorhus/dot-prop
-[conf]: https://github.com/sindresorhus/conf
-
-## Installation
+## installation
 
 `npm i levers`
 
-## Usage
+## api
 
-> COMING SOON
+> coming soon
 
-## Relation to other projects
+## contributing
 
-### `conf`
+Pull requests and any [issues](https://github.com/citycide/stunsail/issues)
+found are always welcome.
 
-This module is heavily based on `conf` with a few core differences.
+## license
 
-1. Electron focus
-
-   ***levers*** is intended to be used in Electron apps. It uses Electron's `app.getPath()` method to track down the storage location ( by default ). `conf` on the other hand is more general and uses the OS environment to store its data in the configuration directory ( by default ). Both allow the path to be configured.
-
-2. Parent app name inference
-
-   `conf` uses node's `module.parent` to resolve to the app's root package.json and determine the app or module's name, which is used for file creation ( more on this below ). To make this work reliably, it needs to delete its own `require.cache` to prevent caching.
-
-   ***levers*** uses Electron's API along with the [app-root-path][approot] module to retrieve the parent app's identifier from its package.json, settling in this order:
-
-   `productName -> name -> 'Electron'`
-
-   This is then used to point to a subdirectory with that name inside Electron's `getPath('appData')`. Astute readers may ask, "Why not just use Electron's `getPath('userData')` path instead of building that same path manually?" The problem with `userData` is that in some cases, especially development, it defaults to the 'Electron' directory rather than the app's actual name. This has to do with using `electron-prebuilt`.
-
-[approot]: inxilpro/node-app-root-path
-
-## Contributing
-
-I am open to input and discussion about the project. Feel free to open an issue or submit a pull request. For large changes, please open an issue to discuss the revisions first.
-
-## License
-
-MIT
-
-Uses code also licensed under MIT © [Sindre Sorhus](https://sindresorhus.com)
+MIT © [Bo Lingen / citycide](https://github.com/citycide)
