@@ -1,73 +1,49 @@
 {
   "name": "levers",
   "version": "0.7.0",
-  "description": "A simple settings store for Electron",
-  "main": "dist/levers.js",
-  "jsnext:main": "dist/levers.mjs",
-  "scripts": {
-    "prebuild": "eslint lib test",
-    "build": "rollup -c && npm run docs",
-    "watch": "rollup -c -w",
-    "pretest": "npm run build",
-    "test": "electron-mocha",
-    "docs": "jsdoc -c .jsdoc.json",
-    "pages": "git subtree split --prefix docs -b gh-pages && git push -f origin gh-pages:gh-pages && git branch -D gh-pages",
-    "prepublish": "npm test"
+  "description": "Configuration handling with no class whatsoever.",
+  "author": {
+    "name": "Bo Lingen",
+    "email": "thecitycide@gmail.com",
+    "url": "github.com/citycide"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/citycide/levers.git"
   },
-  "keywords": [
-    "es6",
-    "es2015",
-    "es2016",
-    "modules",
-    "rollup",
-    "electron",
-    "config",
-    "settings",
-    "storage"
-  ],
-  "author": "citycide",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/citycide/levers/issues"
+  "homepage": "https://github.com/citycide/levers",
+  "bugs": "https://github.com/citycide/levers/issues",
+  "engines": {
+    "node": ">=4"
   },
-  "files": [
-    "src",
-    "dist",
-    "README.md"
+  "keywords": [
+    "config",
+    "store",
+    "settings",
+    "storage",
+    "functional"
   ],
-  "homepage": "https://github.com/citycide/levers#readme",
+  "scripts": {
+    "lint": "eslint index.js",
+    "test": "echo 'ava... eventually'",
+    "prepublish": "npm test"
+  },
   "dependencies": {
     "app-root-path": "^2.0.1",
-    "dot-prop": "^4.0.0",
-    "fs-jetpack": "^0.10.2",
-    "is-plain-obj": "^1.1.0"
+    "dot-prop": "^4.1.1",
+    "is-plain-obj": "^1.1.0",
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
-    "babel-register": "^6.18.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
-    "babel-plugin-transform-es2015-parameters": "^6.18.0",
-    "docdash": "citycide/docdash",
-    "electron": "^1.4.7",
-    "electron-mocha": "^3.2.0",
-    "eslint": "^3.10.2",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-promise": "^3.4.0",
-    "eslint-plugin-standard": "^2.0.1",
-    "jsdoc": "^3.4.0",
-    "rollup": "^0.38.3",
-    "rollup-plugin-babel": "^2.6.1",
-    "rollup-watch": "^2.5.0"
-  },
-  "babel": {
-    "presets": [],
-    "plugins": [
-      "transform-es2015-modules-commonjs",
-      "transform-es2015-parameters"
-    ]
+    "ava": "^0.18.2",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^3.16.1",
+    "eslint-config-standard": "^7.0.1",
+    "eslint-plugin-prefer-let": "^0.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1"
   },
   "config": {
     "commitizen": {

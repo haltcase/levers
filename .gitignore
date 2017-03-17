@@ -1,4 +1,8 @@
+# IDE configurations
+.c9
 .idea
-dist
+.vscode
+
 node_modules
+
 levers-*.tgz

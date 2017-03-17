@@ -8,11 +8,13 @@ module.exports = {
     mocha: true
   },
   extends: 'standard',
-  plugins: [],
+  plugins: ['prefer-let'],
   rules: {
     quotes: ['error', 'single', {
       avoidEscape: true,
       allowTemplateLiterals: true
     }],
+
+    'prefer-let/prefer-let': 2
   }
 }
