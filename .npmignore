@@ -1,5 +1,16 @@
+# IDE configurations
+.c9
 .idea
-lib
-test
+.vscode
+
+# source files
+docs
+tests
 node_modules
+
+.babelrc
+.travis.yml
+.eslintrc.js
+.gitattributes
+
 levers-*.tgz
