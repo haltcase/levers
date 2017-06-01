@@ -77,6 +77,7 @@ function levers (name, options) {
     },
 
     * [Symbol.iterator] () {
+      store = getData()
       for (let key of Object.keys(store)) {
         yield [key, store[key]]
       }
