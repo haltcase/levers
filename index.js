@@ -86,6 +86,7 @@ function levers (name, options) {
 }
 
 levers.exists = name => fs.existsSync(getFilePath(name))
+levers.resolve = getFilePath
 
 function getFilePath (name) {
   let pkgPath = path.resolve(`${appRoot}`, 'package.json')
