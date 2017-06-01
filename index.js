@@ -55,8 +55,8 @@ function levers (name, options) {
   }
 
   return {
-    get,
-    set,
+    get: get,
+    set: set,
     has,
     del,
     clear,
