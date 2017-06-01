@@ -13,7 +13,7 @@ const empty = () => Object.create(null)
 function levers (name, options) {
   options = Object.assign({}, options)
 
-  let path = getFilePath(name, options.dir)
+  let path = getFilePath(name, options)
   let getData = createGetter(path)
   let setData = createSetter(path)
 
@@ -99,11 +99,11 @@ function levers (name, options) {
 levers.exists = name => fs.existsSync(getFilePath(name))
 levers.resolve = getFilePath
 
-function getFilePath (name, directory) {
+function getFilePath (name, options) {
   let fileName = path.basename(name, '.json') + '.json'
 
-  if (directory) {
-    return path.resolve(directory, fileName)
+  if (options && options.dir) {
+    return path.resolve(options.dir, fileName)
   }
 
   let pkgPath = path.resolve(`${appRoot}`, 'package.json')

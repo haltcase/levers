@@ -13,7 +13,7 @@ test('exposes path resolution logic as a static `resolve()` method', t => {
 
 test('`resolve()` uses provided directory for resolution', t => {
   let dir = __dirname
-  t.is(levers.resolve('test', dir), join(dir, 'test.json'))
+  t.is(levers.resolve('test', { dir }), join(dir, 'test.json'))
 })
 
 test('exposes file existence helper as a static `exists()` method', t => {
