@@ -23,10 +23,10 @@ test('set() :: allows for setting deeply nested keys', t => {
   unlinkSync(storage.path)
 })
 
-test('set() :: allows using an object to set multiple keys', t => {
-  let storage = levers(baseName + 'set-object')
+test('merge() :: merge the properties of an object into storage', t => {
+  let storage = levers(baseName + 'merge')
 
-  storage.set({ one: 1, two: 2 })
+  storage.merge({ one: 1, two: 2 })
   t.deepEqual(storage.data, { one: 1, two: 2 })
 
   unlinkSync(storage.path)

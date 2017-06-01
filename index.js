@@ -31,13 +31,15 @@ function levers (name, options) {
 
   function set (key, value) {
     store = getData()
+    dotProp.set(store, key, value)
+    setData(store)
+  }
 
-    if (isPlainObject(key)) {
-      for (let k of Object.keys(key)) {
-        dotProp.set(store, k, key[k])
-      }
-    } else {
-      dotProp.set(store, key, value)
+  function merge (object) {
+    store = getData()
+
+    for (let k of Object.keys(object)) {
+      dotProp.set(store, k, object[k])
     }
 
     setData(store)
@@ -63,6 +65,7 @@ function levers (name, options) {
     get: get,
     getOr,
     set: set,
+    merge,
     has,
     del,
     clear,
