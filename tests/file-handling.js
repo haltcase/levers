@@ -1,6 +1,6 @@
 import test from 'ava'
 import levers from '..'
-import { isAbsolute } from 'path'
+import { join, isAbsolute } from 'path'
 import { existsSync, unlinkSync } from 'fs'
 
 const baseName = '__levers_temp_test_file__'
@@ -9,6 +9,11 @@ test('exposes path resolution logic as a static `resolve()` method', t => {
   t.is(typeof levers.resolve, 'function')
   t.is(typeof levers.resolve(baseName), 'string')
   t.true(isAbsolute(levers.resolve(baseName)))
+})
+
+test('`resolve()` uses provided directory for resolution', t => {
+  let dir = __dirname
+  t.is(levers.resolve('test', dir), join(dir, 'test.json'))
 })
 
 test('exposes file existence helper as a static `exists()` method', t => {
@@ -51,4 +56,13 @@ test('access the target file if it already exists', t => {
   t.is(settings.get('someKey'), 'someValue')
 
   unlinkSync(path)
+})
+
+test('allows providing a custom directory', t => {
+  let settings = levers('test', { dir: process.cwd() })
+
+  settings.set('something', 'value')
+  t.true(existsSync(join(process.cwd(), 'test.json')))
+
+  unlinkSync(settings.path)
 })

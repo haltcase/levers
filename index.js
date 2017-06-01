@@ -13,7 +13,7 @@ const empty = () => Object.create(null)
 function levers (name, options) {
   options = Object.assign({}, options)
 
-  let path = getFilePath(name)
+  let path = getFilePath(name, options.dir)
   let getData = createGetter(path)
   let setData = createSetter(path)
 
@@ -90,12 +90,17 @@ function levers (name, options) {
 levers.exists = name => fs.existsSync(getFilePath(name))
 levers.resolve = getFilePath
 
-function getFilePath (name) {
+function getFilePath (name, directory) {
+  let fileName = path.basename(name, '.json') + '.json'
+
+  if (directory) {
+    return path.resolve(directory, fileName)
+  }
+
   let pkgPath = path.resolve(`${appRoot}`, 'package.json')
   let pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'))
 
   let inHome = path.resolve.bind(null, os.homedir())
-  let fileName = path.basename(name, '.json') + '.json'
 
   if (process.platform === 'win32') {
     return inHome('AppData', 'Local', pkg.name, 'Data', fileName)
