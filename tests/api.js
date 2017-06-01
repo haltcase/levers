@@ -41,20 +41,20 @@ test('get() :: retrieves value at the specified path', t => {
   unlinkSync(storage.path)
 })
 
-test('get() :: returns provided value if the path is nil', t => {
-  let storage = levers(baseName + 'get-or')
-
-  storage.set('actualKey')
-  t.is(storage.get('nothingHere', 'default value'), 'default value')
-
-  unlinkSync(storage.path)
-})
-
 test('get() :: allows for accessing deeply nested keys', t => {
   let storage = levers(baseName + 'get-deep')
 
   storage.data = { deeply: { nested: { object: { key: 'value' } } } }
   t.is(storage.get('deeply.nested.object.key'), 'value')
+
+  unlinkSync(storage.path)
+})
+
+test('getOr() :: returns provided value if the path is nil', t => {
+  let storage = levers(baseName + 'get-or')
+
+  storage.set('actualKey', 'with a value')
+  t.is(storage.getOr('nothingHere', 'default value'), 'default value')
 
   unlinkSync(storage.path)
 })

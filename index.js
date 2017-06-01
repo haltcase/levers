@@ -19,7 +19,12 @@ function levers (name, options) {
 
   let store = Object.assign(empty(), options.defaults, getData())
 
-  function get (key, defaultValue) {
+  function get (key) {
+    store = getData()
+    return dotProp.get(store, key)
+  }
+
+  function getOr (key, defaultValue) {
     store = getData()
     return dotProp.get(store, key, defaultValue)
   }
@@ -56,6 +61,7 @@ function levers (name, options) {
 
   return {
     get: get,
+    getOr,
     set: set,
     has,
     del,
