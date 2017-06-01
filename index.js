@@ -26,8 +26,8 @@ function levers (name, options) {
     store = getData()
 
     if (isPlainObject(key)) {
-      for (let k of Object.keys(store)) {
-        dotProp.set(store, k, store[k])
+      for (let k of Object.keys(key)) {
+        dotProp.set(store, k, key[k])
       }
     } else {
       dotProp.set(store, key, value)
