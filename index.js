@@ -1,7 +1,7 @@
 const fs = require('fs')
 const os = require('os')
 const path = require('path')
-const mkdirp = require('mkdirp')
+const makeDir = require('make-dir')
 const dotProp = require('dot-prop')
 const appRoot = require('app-root-path')
 const isPlainObject = require('is-plain-obj')
@@ -112,7 +112,7 @@ function createGetter (atPath) {
       return Object.assign(empty(), JSON.parse(raw))
     } catch (err) {
       if (err.code === 'ENOENT') {
-        mkdirp.sync(path.dirname(atPath))
+        makeDir.sync(path.dirname(atPath))
         return empty()
       }
 
@@ -127,7 +127,7 @@ function createGetter (atPath) {
 
 function createSetter (atPath) {
   return data => {
-    mkdirp.sync(path.dirname(atPath))
+    makeDir.sync(path.dirname(atPath))
     fs.writeFileSync(atPath, JSON.stringify(data, null, 2))
   }
 }

@@ -27,13 +27,14 @@
   "scripts": {
     "lint": "eslint index.js",
     "test": "echo 'ava... eventually'",
-    "prepublish": "npm test"
+    "prepublish": "npm test",
+    "commit": "git-cz"
   },
   "dependencies": {
     "app-root-path": "^2.0.1",
     "dot-prop": "^4.1.1",
     "is-plain-obj": "^1.1.0",
-    "mkdirp": "^0.5.1"
+    "make-dir": "^1.0.0"
   },
   "devDependencies": {
     "@citycide/cz-conventional": "^1.0.0",
